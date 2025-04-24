@@ -1,3 +1,5 @@
+$("#inputPrice").mask('000.000.000.000.000,00', {reverse: true});
+
 var products = [
     {
         id: 1,
@@ -34,10 +36,13 @@ var categories = [
     { id: 3, name: "Importado" }
 ];
 
+var formatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+});
 
 //OnLoad
 loadProducts();
-
 
 function loadProducts(){
     for(let prod of products) {
@@ -64,7 +69,7 @@ function addNewRow(prod) {
     newRow.insertCell().appendChild(descriptionNode);
 
     //Insert product price
-    var priceNode = document.createTextNode(prod.price);
+    var priceNode = document.createTextNode(formatter.format(prod.price));
     newRow.insertCell().appendChild(priceNode);
 
     //Insert product category
@@ -74,7 +79,7 @@ function addNewRow(prod) {
     var options = '';
 
     if(prod.promotion) {
-        options = '<span class="badge text-bg-success">P</span>';
+        options += '<span class="badge text-bg-success me-1">P</span>';
     }
 
     if(prod.new) {
