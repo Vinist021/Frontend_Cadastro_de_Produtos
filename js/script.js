@@ -1,3 +1,4 @@
+//Masks
 $("#inputPrice").mask('000.000.000.000.000,00', {reverse: true});
 
 var products = [
@@ -44,10 +45,30 @@ var formatter = new Intl.NumberFormat('pt-BR', {
 //OnLoad
 loadProducts();
 
+//Load all prodcuts
 function loadProducts(){
     for(let prod of products) {
         addNewRow(prod);
     }
+}
+
+//save a product
+function save() {
+
+   var prod =  {
+        id: products.length + 1,
+        name: document.getElementById("inputName").value,
+        description: document.getElementById("inputDescription").value,
+        price: document.getElementById("inputPrice").value,
+        category: document.getElementById("selectCategory").value,
+        promotion: document.getElementById("checkBoxPromotion").checked,
+        new: document.getElementById("checkBoxNewProduct").checked
+    };
+
+    addNewRow(prod);
+    products.push(prod);
+
+    document.getElementById("formProduct").reset();
 }
 
 //Add new row
@@ -73,7 +94,7 @@ function addNewRow(prod) {
     newRow.insertCell().appendChild(priceNode);
 
     //Insert product category
-    var categoryNode = document.createTextNode(categories[prod.id - 1].name);
+    var categoryNode = document.createTextNode(categories[prod.category - 1].name);
     newRow.insertCell().appendChild(categoryNode);
 
     var options = '';
@@ -87,6 +108,6 @@ function addNewRow(prod) {
     }
 
     newRow.insertCell().innerHTML = options;
-       
 }
+
 
