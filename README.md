@@ -18,7 +18,7 @@ Esta é uma página web que simula um sistema de **cadastro de produtos**, desen
 - HTML
 - CSS
 - [Bootstrap 5](https://getbootstrap.com/)
-- JavaScript (puro)
+- JavaScript
 - [jQuery](https://jquery.com/)
 - [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/)
 
