@@ -23,5 +23,5 @@ Esta é uma página web que simula um sistema de **cadastro de produtos**, desen
 - [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/)
 
 ## 📎 Acesso
-🚀 Acesse o projeto: [Projeto_Cadastro_de_Produtos](https://vinist021.github.io/Projeto_Cadastro_de_Produtos/) 
+🚀 Acesse o projeto: [Projeto_Cadastro_de_Produtos](https://vinist021.github.io/Frontend_Cadastro_de_Produtos/) 
 
